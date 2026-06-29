@@ -1,5 +1,21 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: sans-serif; background-color: #ffffff; padding: 2rem; }
-.container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto; }
-.card { border: 1px solid #ddd; padding: 1.5rem; border-radius: 12px; text-align: center; }
-.btn { display: inline-block; background: #000; color: #fff; padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none; margin-top: 1rem; }
+/* Reduce the gap between your product cards */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem; /* Change this from 2rem to 1rem or smaller */
+    padding: 1rem; /* Adjust container padding */
+}
+
+/* Add this to keep the cards neat */
+.card img {
+    border-radius: 8px; /* Makes images look professional */
+    margin-bottom: 10px; /* Reduces space between image and text */
+}
+
+/* Fix extra spacing inside the card */
+.card {
+    border: 1px solid #ddd;
+    padding: 1rem; /* Reduce padding inside the card */
+    border-radius: 12px;
+    text-align: center;
+}
