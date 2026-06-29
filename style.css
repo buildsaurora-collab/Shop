@@ -1,21 +1,41 @@
-/* Reduce the gap between your product cards */
-.container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem; /* Change this from 2rem to 1rem or smaller */
-    padding: 1rem; /* Adjust container padding */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+    font-family: sans-serif; 
+    background-color: #ffffff; 
+    padding: 20px; 
 }
 
-/* Add this to keep the cards neat */
-.card img {
-    border-radius: 8px; /* Makes images look professional */
-    margin-bottom: 10px; /* Reduces space between image and text */
+.container { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 300px)); 
+    gap: 15px; 
+    justify-content: center; 
+    max-width: 800px; 
+    margin: 0 auto; 
 }
 
-/* Fix extra spacing inside the card */
-.card {
-    border: 1px solid #ddd;
-    padding: 1rem; /* Reduce padding inside the card */
-    border-radius: 12px;
-    text-align: center;
+.card { 
+    border: 1px solid #ddd; 
+    padding: 15px; 
+    border-radius: 12px; 
+    text-align: center; 
+}
+
+.card img { 
+    width: 100%; 
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures image doesn't stretch */
+    border-radius: 8px; 
+    margin-bottom: 10px; 
+}
+
+.btn { 
+    display: inline-block; 
+    background: #000; 
+    color: #fff; 
+    padding: 8px 16px; 
+    border-radius: 5px; 
+    text-decoration: none; 
+    margin-top: 10px; 
 }
