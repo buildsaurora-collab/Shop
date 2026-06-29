@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="product-grid" class="container"></div>
 
+    <script>
+        // List of your product folders
+        const productFolders = ['product-1', 'product-2'];
+
+        async function loadProducts() {
+            const grid = document.getElementById('product-grid');
+            for (const folder of productFolders) {
+                const response = await fetch(`products/${folder}/data.json`);
+                const data = await response.json();
+                
+                grid.innerHTML += `
+                    <div class="card">
+                        <h3>${data.name}</h3>
+                        <p>${data.price}</p>
+                        <a href="payments.html">Select Plan</a>
+                    </div>
+                `;
+            }
+        }
+        loadProducts();
+    </script>
+</body>
+</html>
