@@ -1,27 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="product-grid" class="container"></div>
 
     <script>
+        // Ensure these match your folder names exactly
         const productFolders = ['product-1', 'product-2'];
+
         async function loadProducts() {
             const grid = document.getElementById('product-grid');
             for (const folder of productFolders) {
-                // Fetches data.json from inside each specific product folder
-                const response = await fetch(`products/${folder}/data.json`);
-                const data = await response.json();
-                
-                grid.innerHTML += `
-                    <div class="card">
-                        <h3>${data.name}</h3>
-                        <p>Price: ${data.price}</p>
-                        <a href="payments.html" class="btn">Buy Now</a>
-                    </div>
-                `;
+                try {
+                    const response = await fetch(`products/${folder}/data.json`);
+                    const data = await response.json();
+                    
+                    grid.innerHTML += `
+                        <div class="card">
+                            <img src="products/${folder}/images/img1.jpg" alt="${data.name}">
+                            <h3>${data.name}</h3>
+                            <p>Price: ${data.price}</p>
+                            <a href="payments.html" class="btn">Buy Now</a>
+                        </div>
+                    `;
+                } catch (err) {
+                    console.error("Error loading " + folder, err);
+                }
             }
         }
         loadProducts();
